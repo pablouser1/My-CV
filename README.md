@@ -4,7 +4,7 @@ This project contains my multilang CV made using LaTeX and AltaCV
 ## Dependencies
 You first need to get AltaCV, you can do this by running:
 ```bash
-git submodule --init
+git submodule init --update
 ```
 
 Then, you need the LaTeX dependencies of AltaCV, more info [here](https://github.com/liantze/AltaCV#requirements-and-compilation)
