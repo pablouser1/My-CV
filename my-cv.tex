@@ -1,0 +1,319 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.5, 3 Nov 2022) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv/altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% multi-lang config
+\usepackage[english,spanish]{babel}
+\newcommand\en[1]{\iflanguage{english}{#1}{}}
+\newcommand\es[1]{\iflanguage{spanish}{#1}{}}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\selectlanguage{\jobname}
+\begin{flushright}
+{\scriptsize {
+  \en{Generated: \today}
+  \es{Generado el \today}
+}}
+\end{flushright}
+\medskip
+\name{Pablo Ferreiro}
+\tagline{
+  \en{Fullstack Dev}
+  \es{Desarrollador Fullstack}
+}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{me}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  \email{me@pabloferreiro.es}
+  \location{Benalmádena, Málaga, Spain}
+  \homepage{pabloferreiro.es}
+  \github{pablouser1}
+  \linkedin{pablo-ferreiro-romero-bba809257}
+  \twitter{pablouser1}
+  \NewInfoField{telegram}{\faTelegram}[https://t.me/]
+  \telegram{pablouser1}
+  \printinfo{\faHashtag}{@pablouser1:matrix.org}[https://matrix.to/\#/@pablouser1:matrix.org]
+}
+
+\makecvheader
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{
+  \en{About me}
+  \es{Acerca de}
+}
+
+\en{Hi there! I'm a passionate open source developer.}
+\es{¡Hola! Soy un desarrollador open-source apasionado por el mundo de la programación.}
+\linebreak
+\linebreak
+\en{I started getting into programming when I got my first ever laptop, a Windows XP with 512MB RAM. Since then, I started making programs to make my life easier and started sharing them with others who may find it useful.}
+\es{Empecé a programar cuando conseguí mi primer portátil, con Windows XP y 512MB de RAM. Desde entonces, desarrollé un gran número de programas para hacer mi vida más fácil y empecé a compartirlos con otras personas.}
+
+\cvsection{
+  \en{Experience}
+  \es{Experiencia}
+}
+
+\cvevent{Webdev}{Freelancer}{
+  \en{July 2022 -- Ongoing}
+  \es{Julio 2022 -- Actualidad}
+}{
+  \en{Benalmádena, Spain (Remote)}
+  \es{Benalmádena, España (Remoto)}
+}
+\begin{itemize}
+\item {
+  \en{Blog made from scratch using PHP7}
+  \es{Blog hecho desde cero usando PHP, sin frameworks}
+}
+\item Web: \homepage{iescerrodelviento.es}
+\end{itemize}
+
+% -- PROJECTS -- %
+\cvsection{
+  \en{Projects}
+  \es{Proyectos}
+}
+
+\cvevent{ProxiTok}{\github{pablouser1/ProxiTok}}{
+  \en{Jan 2022 -- Ongoing}
+  \es{Enero 2022 -- Actualidad}
+}{}
+\begin{itemize}
+    \item {
+      \en{Open source alternative frontend for TikTok made using PHP}
+      \es{Alternativa open-source para TikTok hecho con PHP}
+    }
+    \item {
+      \en{Over 1.5K stars in Github and \textasciitilde{}167K requests per-day on the official instance}
+      \es{Tiene cerca de 1.5K estrellas in Github y ~167K solicitudes por día en la instancia oficial}
+    }
+\end{itemize}
+
+\divider
+
+\cvevent{plugin.video.filmin}{\github{pablouser1/plugin.video.filmin}}{
+  \en{Jul 2021 -- Ongoing}
+  \es{Julio 2021 -- Actualidad}
+}{}
+\en{(\textit{unofficial}) Open source plugin of Filmin for Kodi Made using Python}
+\es{Plugin (\textit{no oficial}) de código abierto para usar Filmin en Kodi hecho en Python}
+
+\divider
+
+\cvevent{Jellyfin for Netcast}{\github{pablouser1/jellyfin-netcast}}{Sept 2019 -- Feb 2022}{}
+\en{(\textit{unofficial}) Open source Jellyfin client for Netcast TVs made using JS}
+\es{Cliente (\textit{no oficial}) de código abierto para ver Jellyfin en televisiones Netcast hecho con JS}
+% -- END PROJECTS -- %
+
+\cvsection{
+  \en{Volunteering}
+  \es{Voluntariado}
+}
+\cvevent{Hackers Week 9}{\homepage{hackersweek.es}}{
+  \en{20-24th of February 2023}
+  \es{20-24 de Febrero 2023}
+}{ETS Ingeniería Informática}
+
+\divider
+
+\cvevent{UAD360 3}{\homepage{uad360.es}}{
+  \en{16-17th of June 2023}
+  \es{16 y 17 de Junio 2023}
+}{ETS Ingeniería Informática}
+
+\medskip
+
+\newpage
+\switchcolumn
+
+\cvsection{
+  \en{My Life Philosophy}
+  \es{Mi filosofía de vida}
+}
+
+\begin{quote}
+``Work smarter, not harder.''
+\end{quote}
+
+\cvsection{
+  \en{Most Proud of}
+  \es{Orgulloso de}
+}
+
+\cvachievement{\faUsers}{
+  \en{building an OSS community}
+  \es{construir una comunidad de OSS}
+}{
+  \en{Having people willing to expend time/money on a project you've started}
+  \es{Me encanta saber que hay gente dispuesta a invertir tiempo/dinero en un proyecto que yo empecé}
+}
+
+\divider
+
+\cvachievement{\faServer}{
+  \en{being (almost) fully self-hosted}
+  \es{tener (casi) todo self-hosted}
+}{
+  \en{Cloud, email, sync... is all moved to my own VPS}
+  \es{La nube, email, sync... está todo alojado en mi VPS personal}
+}
+
+\cvsection{
+  \en{Strengths}
+  \es{Fortalezas}
+}
+
+\cvtag{
+  \en{Quick learner}
+  \es{Aprendizaje rápido}
+}
+\cvtag{
+  \en{Hard-working}
+  \es{Trabajador}
+}
+
+\divider\smallskip
+
+\cvtag{PHP}
+\cvtag{Python}
+\cvtag{GoLang}
+\cvtag{Typescript}
+
+\divider\smallskip
+
+\cvtag{Laravel}
+\cvtag{Flutter}
+\cvtag{Vue}\\
+\cvtag{SolidJS}
+\cvtag{Svelte}
+
+\divider\smallskip
+
+\cvtag{Linux SysAdmin}
+
+\cvsection{
+  \en{Languages}
+  \es{Idiomas}
+}
+
+\cvskill{
+  \en{Spanish (Native)}
+  \es{Español (Nativo)}
+}
+{5}
+\divider
+
+\cvskill{{
+  \en{English}
+  \es{Inglés}
+}(B2)}{3.5}
+\divider
+
+\cvskill{{
+  \en{French}
+  \es{Francés}
+}(A2)}{1.5}
+\medskip
+
+\cvsection{
+  \en{Education}
+  \es{Educación}
+}
+
+\cvevent{Bachillerato \en{(High school)}}{IES Al-Baytar}{2019 -- 2020}{}
+\begin{itemize}
+    \es{\item Rama tecnológica}
+    \item Bilingual modality
+\end{itemize}
+
+\divider
+
+\cvevent{
+  \en{Computer Engineering}
+  \es{Ingeniería de Computadores}
+}{Universidad de Málaga}{2021 -- {
+  \en{Ongoing}
+  \es{Actualidad}
+}}{}
+\begin{itemize}
+    \item {
+      \en{Currently on the 2nd year}
+      \es{Actualmente en el segundo año}
+    }
+    \item {
+      \en{Bilingual modality}
+      \es{Modalidad bilingüe}
+    }
+\end{itemize}
+
+\end{paracol}
+
+\end{document}
